@@ -5,7 +5,7 @@ using UnityEngine;
 public class Word : MonoBehaviour {
 
 	public string text = "Spelling";
-	bool isActive = false;
+	public bool isActive = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,4 +16,5 @@ public class Word : MonoBehaviour {
 	void Update () {
 		
 	}
+		
 }

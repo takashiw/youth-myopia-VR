@@ -8,6 +8,8 @@ public class LineOfSight : MonoBehaviour {
 	public float rayLength;
 	public bool isGrabbed;
 	private Rigidbody grabbedObject;
+	private GameObject collidedObject;
+	private Word currentSight = null;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +23,17 @@ public class LineOfSight : MonoBehaviour {
 
 		if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out vision, rayLength)) {
 			if(vision.collider.tag == "Interactive"){
-				Debug.Log(vision.collider.name);
+//				collidedObject = vision.collider.GetComponent<Word>();
+				currentSight = vision.collider.GetComponent<Word>();
+//				Debug.Log(vision.collider.GetComponent<Word>().text);
 			}
-
+		} else {
+			currentSight = null;
 		}
+//		Debug.Log(currentSight);
+	}
+
+	public Word getCurrentSight(){
+		return currentSight;
 	}
 }
