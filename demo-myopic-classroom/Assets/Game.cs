@@ -12,6 +12,7 @@ public class Game : MonoBehaviour {
 	float startX = -0.9f;
 	float startY = 0.8f;
 	int columnAmount = 4;
+	int score = 0;
 
 	private IEnumerator coroutine;
 
@@ -38,7 +39,9 @@ public class Game : MonoBehaviour {
 //		Debug.Log(cam.getCurrentSight().isActive);
 
 		if (cam.getCurrentSight () != null && cam.getCurrentSight ().isActive) {
-			Debug.Log(cam.getCurrentSight().text);
+//			Debug.Log(cam.getCurrentSight().text);
+			score++;
+			Debug.Log (score);
 		}
 	}
 
